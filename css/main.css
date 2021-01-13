@@ -345,6 +345,51 @@ template {
   display: none;
 }
 
+.grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.col {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  padding: 0 .75em;
+}
+
+@media (min-width: 725px) {
+  .col:first-of-type {
+    padding-left: 0;
+  }
+  .col:last-of-type {
+    padding-right: 0;
+  }
+}
+
+.col--full {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+}
+
+@media (min-width: 725px) {
+  .col--1-3 {
+    -ms-flex-preferred-size: 33.3333%;
+        flex-basis: 33.3333%;
+  }
+  .col--2-3 {
+    -ms-flex-preferred-size: 66.6666%;
+        flex-basis: 66.6666%;
+  }
+  .col--1-2 {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -376,6 +421,12 @@ img {
 
 .lg-screen {
   display: none;
+}
+
+@media (min-width: 725px) {
+  .lg-screen {
+    display: block;
+  }
 }
 
 .bg-primary {
@@ -443,6 +494,12 @@ h2 {
 @media (min-width: 495px) {
   .title-box + .bg-primary {
     padding-top: 8em;
+  }
+}
+
+@media (min-width: 725px) {
+  .title-box {
+    max-width: 700px;
   }
 }
 
@@ -569,26 +626,6 @@ h2 {
   opacity: 0;
 }
 
-.grid {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.col {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 100%;
-          flex: 0 0 100%;
-}
-
-.col--full {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 100%;
-          flex: 0 0 100%;
-}
-
 .main-header {
   position: absolute;
   top: 0;
@@ -612,6 +649,34 @@ h2 {
   text-align: center;
 }
 
+@media (min-width: 725px) {
+  .hero {
+    text-align: left;
+    padding-bottom: 0;
+    height: 80vmin;
+    min-height: 800px;
+  }
+}
+
+@media (min-width: 725px) {
+  .hero-text {
+    margin-top: 10vmax;
+  }
+}
+
+.promo .bg-primary {
+  text-align: left;
+  padding-left: 7%;
+  padding-top: 7.5em;
+  padding-bottom: 7.5em;
+}
+
+.promo .img-box {
+  background: url(../img/phone-in-hand.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
 .sales-points {
   padding: 10vh 0 0;
 }
@@ -626,6 +691,12 @@ h2 {
 
 .sales-points .sales-point:last-child {
   margin-bottom: 0;
+}
+
+@media (min-width: 725px) {
+  .sales-points .sales-point:first-of-type {
+    margin-top: 0;
+  }
 }
 
 footer {
